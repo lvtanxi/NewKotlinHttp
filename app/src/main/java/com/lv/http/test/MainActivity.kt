@@ -9,6 +9,7 @@ import com.lv.http.test.net.WidgetInterface
 import com.lv.http.test.util.DLog
 import com.lv.http.test.util.intoCompositeSubscription
 import com.lv.http.test.util.io2main
+import kotlinx.android.synthetic.main.activity_main.*
 import rx.subscriptions.CompositeSubscription
 
 class MainActivity : AppCompatActivity(), WidgetInterface {
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity(), WidgetInterface {
                 .subscribe(LoadingSubscriber(this,{
                     onSuccess {
                         DLog.d(it)
+                        dd.text=it.toString()
                     }
                     onFinish { 
                         DLog.d(">>>>>")
